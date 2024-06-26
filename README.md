@@ -1,3 +1,53 @@
+este repositório foi criado para publicação de um teste de API REST, abaixo estão algumas instruções de testes e em seguida o "read me" padrão do code igniter.
+eu tive alguns problemas com o oci8 e não consegui realizar as querys que queria pela model, então utilizei as funções proprias do codeigniter para isso.
+
+parametros utilizados para insert e update serão os mesmo, somente sendo necessario o id para o update;
+
+valores sáo esperados formatados com mascara pela view
+ex: 1.500,00;
+
+cpf e cnpj sáo esperados com mascara
+ex: 123.456.789.01;
+
+tipo de cliente: 1 para pessoa fisica e 2 para pessoa juridica;
+
+
+cpf e cnpj são unicos não permitindo a inserção ou alteração de duplicados;
+
+em relação a exclusão, nenhum dos arquivos são realmente excluidos, para isso possui o campo "excluido" no banco;
+
+tipo de produto é uma string livre para o usuario preencher;
+
+nome do produto; não é permitido duplicadas, caso a quantidade zere, é necessario realizar a alteração e modificar a quantidade;
+
+formato utilizado para envio dos pedidos(no update necessario acrescentar o status):
+
+{
+    "parametros":{
+        "produtos":[
+            {   "id":1,
+                "valor":"11,50", 
+                "qtde":2
+            },
+            {
+                "id":11, 
+                "valor":"911,99", 
+                "qtde":2
+            }
+        ],
+        "id_cliente":1
+    }
+}
+;
+
+status para os pedidos:
+1 - Em aberto
+2 - Pago
+3 - Cancelado
+
+
+
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
